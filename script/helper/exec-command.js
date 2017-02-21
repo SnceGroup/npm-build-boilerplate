@@ -14,8 +14,8 @@ env.PATH = path.resolve('./node_modules/.bin') + SEPARATOR + env.PATH;
 module.exports = function(command) {
   var output = execSync(command, {
     cwd: process.cwd(),
-    env: env
+    env: env,
+    shell: true,
+    stdio: 'inherit'
   });
-
-  console.log(output.toString().trim());
 };
