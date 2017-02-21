@@ -2,20 +2,33 @@
   "author": "Alberto Terragni <alberto.terragni@sncegroup.ch>",
   "bugs": "https://github.com/SnceGroup/npm-build-boilerplate/issues",
   "description": "Opinionated npm build configuration for building static websites.",
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.5.0"
+  },
   "engines": {
     "node": ">=4.0.0"
   },
   "jest": {
-    "collectCoverageFrom": ["src/js/*.js"]
+    "collectCoverageFrom": [
+      "src/js/*.js"
+    ]
   },
-  "keywords": ["npm", "build", "static", "website", "sass", "twig"],
+  "keywords": [
+    "npm",
+    "build",
+    "static",
+    "website",
+    "sass",
+    "twig"
+  ],
   "license": "MIT",
   "name": "npm-build-boilerplate",
   "repository": {
     "type": "git",
     "url": "https://github.com/SnceGroup/npm-build-boilerplate"
   },
-  "scripts": {},
+  "scripts": {
+    "scss": "node ./script/css/scss.js"
+  },
   "version": "0.0.1"
 }
