@@ -5,11 +5,14 @@
   "devDependencies": {
     "autoprefixer": "^6.7.4",
     "clean-css-cli": "^4.0.7",
+    "imagemin-cli": "^3.0.0",
+    "imagemin-pngquant": "^5.0.0",
     "node-sass": "^4.5.0",
     "postcss-cli": "^3.0.0-beta",
     "stylefmt": "^5.1.2",
     "stylelint": "^7.9.0",
-    "stylelint-config-standard": "^16.0.0"
+    "stylelint-config-standard": "^16.0.0",
+    "symlink-or-copy": "^1.1.8"
   },
   "engines": {
     "node": ">=4.0.0"
@@ -36,6 +39,7 @@
   "scripts": {
     "autoprefixer": "node ./script/css/autoprefixer.js",
     "clean-css": "node ./script/css/clean-css.js",
+    "imagemin": "node ./script/images/imagemin.js",
     "scss": "node ./script/css/scss.js",
     "stylelint": "node ./script/css/stylelint.js",
     "build:css:dev": "node ./script/css/build.js",
