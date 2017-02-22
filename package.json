@@ -3,7 +3,9 @@
   "bugs": "https://github.com/SnceGroup/npm-build-boilerplate/issues",
   "description": "Opinionated npm build configuration for building static websites.",
   "devDependencies": {
-    "node-sass": "^4.5.0"
+    "autoprefixer": "^6.7.4",
+    "node-sass": "^4.5.0",
+    "postcss-cli": "^3.0.0-beta"
   },
   "engines": {
     "node": ">=4.0.0"
