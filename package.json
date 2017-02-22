@@ -4,6 +4,7 @@
   "description": "Opinionated npm build configuration for building static websites.",
   "devDependencies": {
     "autoprefixer": "^6.7.4",
+    "clean-css-cli": "^4.0.7",
     "node-sass": "^4.5.0",
     "postcss-cli": "^3.0.0-beta"
   },
@@ -31,6 +32,7 @@
   },
   "scripts": {
     "autoprefixer": "node ./script/css/autoprefixer.js",
+    "clean-css": "node ./script/css/clean-css.js",
     "scss": "node ./script/css/scss.js",
     "build:css:dev": "node ./script/css/build.js",
     "build:css:prod": "NODE_ENV=prod node ./script/css/build.js"
