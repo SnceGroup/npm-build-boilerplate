@@ -1,4 +1,5 @@
-var settings = require('../../settings.json');
+var config = require('../../config.json');
+var fs = require('fs');
 
 /**
  * Returns true if the build is running in production mode
@@ -20,13 +21,25 @@ var isProductionBuild = function() {
  */
 var getBuildRootFolder = function() {
   if(isProductionBuild()) {
-    return settings.build.prodDir;
+    return config.build.prodDir;
   }
   
-  return settings.build.devDir;
+  return config.build.devDir;
+};
+
+/**
+ * Create the build folder if it doesn't exist
+ */
+var createBuildRootFolderIfNotAvailable = function() {
+  var buildFolder = getBuildRootFolder();
+
+  if (!fs.existsSync(buildFolder)) {
+    fs.mkdirSync(buildFolder);
+  }
 };
 
 module.exports = {
   isProductionBuild: isProductionBuild,
-  getBuildRootFolder: getBuildRootFolder
+  getBuildRootFolder: getBuildRootFolder,
+  createBuildRootFolderIfNotAvailable: createBuildRootFolderIfNotAvailable
 }
