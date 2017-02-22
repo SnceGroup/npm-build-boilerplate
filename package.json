@@ -30,6 +30,7 @@
     "url": "https://github.com/SnceGroup/npm-build-boilerplate"
   },
   "scripts": {
+    "autoprefixer": "node ./script/css/autoprefixer.js",
     "scss": "node ./script/css/scss.js"
   },
   "version": "0.0.1"
