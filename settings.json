@@ -1,0 +1,6 @@
+{
+  "build": {
+    "devDir": "./build-dev",
+    "prodDir": "./build-dist"
+  }
+}

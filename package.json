@@ -2,20 +2,44 @@
   "author": "Alberto Terragni <alberto.terragni@sncegroup.ch>",
   "bugs": "https://github.com/SnceGroup/npm-build-boilerplate/issues",
   "description": "Opinionated npm build configuration for building static websites.",
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.7.4",
+    "clean-css-cli": "^4.0.7",
+    "node-sass": "^4.5.0",
+    "postcss-cli": "^3.0.0-beta",
+    "stylefmt": "^5.1.2",
+    "stylelint": "^7.9.0",
+    "stylelint-config-standard": "^16.0.0"
+  },
   "engines": {
     "node": ">=4.0.0"
   },
   "jest": {
-    "collectCoverageFrom": ["src/js/*.js"]
+    "collectCoverageFrom": [
+      "src/js/*.js"
+    ]
   },
-  "keywords": ["npm", "build", "static", "website", "sass", "twig"],
+  "keywords": [
+    "npm",
+    "build",
+    "static",
+    "website",
+    "sass",
+    "twig"
+  ],
   "license": "MIT",
   "name": "npm-build-boilerplate",
   "repository": {
     "type": "git",
     "url": "https://github.com/SnceGroup/npm-build-boilerplate"
   },
-  "scripts": {},
+  "scripts": {
+    "autoprefixer": "node ./script/css/autoprefixer.js",
+    "clean-css": "node ./script/css/clean-css.js",
+    "scss": "node ./script/css/scss.js",
+    "stylelint": "node ./script/css/stylelint.js",
+    "build:css:dev": "node ./script/css/build.js",
+    "build:css:prod": "NODE_ENV=prod node ./script/css/build.js"
+  },
   "version": "0.0.1"
 }
