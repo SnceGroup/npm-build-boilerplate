@@ -1,3 +1,5 @@
+var settings = require('../../settings.json');
+
 /**
  * Get the root build folder by checking the NODE_ENV variable
  *
@@ -5,10 +7,10 @@
  */
 var getBuildRootFolder = function() {
   if(process.env.NODE_ENV && process.env.NODE_ENV === 'prod') {
-    return './build-dist';
+    return settings.build.prodDir;
   }
   
-  return './build-dev';
+  return settings.build.devDir;
 };
 
 module.exports = {
