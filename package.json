@@ -45,7 +45,9 @@
     "svg-sprite": "node ./script/images/svg-sprite.js",
     "stylelint": "node ./script/css/stylelint.js",
     "build:css:dev": "node ./script/css/build.js",
-    "build:css:prod": "NODE_ENV=prod node ./script/css/build.js"
+    "build:css:prod": "NODE_ENV=prod node ./script/css/build.js",
+    "build:images:dev": "node ./script/images/build.js",
+    "build:images:prod": "NODE_ENV=prod node ./script/images/build.js"
   },
   "version": "0.0.1"
 }
