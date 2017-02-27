@@ -42,6 +42,7 @@
     "clean-css": "node ./script/css/clean-css.js",
     "imagemin": "node ./script/images/imagemin.js",
     "scss": "node ./script/css/scss.js",
+    "svg-sprite": "node ./script/images/svg-sprite.js",
     "stylelint": "node ./script/css/stylelint.js",
     "build:css:dev": "node ./script/css/build.js",
     "build:css:prod": "NODE_ENV=prod node ./script/css/build.js"
