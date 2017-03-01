@@ -4,12 +4,14 @@
   "description": "Opinionated npm build configuration for building static websites.",
   "devDependencies": {
     "autoprefixer": "^6.7.4",
+    "browser-sync": "^2.18.8",
     "clean-css-cli": "^4.0.7",
     "glob": "^7.1.1",
     "imagemin-cli": "^3.0.0",
     "imagemin-pngquant": "^5.0.0",
     "node-sass": "^4.5.0",
     "onchange": "^3.2.1",
+    "parallelshell": "^2.0.0",
     "postcss-cli": "^3.0.0-beta",
     "stylefmt": "^5.1.2",
     "stylelint": "^7.9.0",
@@ -43,6 +45,7 @@
   },
   "scripts": {
     "autoprefixer": "node ./script/css/autoprefixer.js",
+    "browser-sync": "node ./script/server/browser-sync.js",
     "clean-css": "node ./script/css/clean-css.js",
     "imagemin": "node ./script/images/imagemin.js",
     "scss": "node ./script/css/scss.js",
@@ -59,7 +62,8 @@
     "build:js:prod": "NODE_ENV=prod webpack",
     "watch:css": "onchange './src/scss/**/*.scss' -- npm run build:css:dev",
     "watch:html": "onchange './src/twig/template/**/*.twig' -- npm run build:html:dev",
-    "watch:js": "webpack --watch"
+    "watch:js": "webpack --watch",
+    "watch": "parallelshell 'npm run browser-sync' 'npm run watch:css' 'npm run watch:html'"
   },
   "version": "0.0.1"
 }
