@@ -15,7 +15,8 @@
     "stylelint-config-standard": "^16.0.0",
     "svg-sprite": "^1.3.6",
     "symlink-or-copy": "^1.1.8",
-    "twig": "^0.10.3"
+    "twig": "^0.10.3",
+    "webpack": "^2.2.1"
   },
   "engines": {
     "node": ">=4.0.0"
@@ -52,7 +53,9 @@
     "build:html:dev": "node ./script/html/build.js",
     "build:html:prod": "NODE_ENV=prod node ./script/html/build.js",
     "build:images:dev": "node ./script/images/build.js",
-    "build:images:prod": "NODE_ENV=prod node ./script/images/build.js"
+    "build:images:prod": "NODE_ENV=prod node ./script/images/build.js",
+    "build:js:dev": "webpack",
+    "build:js:prod": "NODE_ENV=prod webpack"
   },
   "version": "0.0.1"
 }
