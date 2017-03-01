@@ -5,6 +5,7 @@
   "devDependencies": {
     "autoprefixer": "^6.7.4",
     "clean-css-cli": "^4.0.7",
+    "glob": "^7.1.1",
     "imagemin-cli": "^3.0.0",
     "imagemin-pngquant": "^5.0.0",
     "node-sass": "^4.5.0",
@@ -45,6 +46,7 @@
     "scss": "node ./script/css/scss.js",
     "svg-sprite": "node ./script/images/svg-sprite.js",
     "stylelint": "node ./script/css/stylelint.js",
+    "twig": "node ./script/html/twig.js",
     "build:css:dev": "node ./script/css/build.js",
     "build:css:prod": "NODE_ENV=prod node ./script/css/build.js",
     "build:images:dev": "node ./script/images/build.js",
