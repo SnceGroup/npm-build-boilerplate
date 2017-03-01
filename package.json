@@ -49,6 +49,8 @@
     "twig": "node ./script/html/twig.js",
     "build:css:dev": "node ./script/css/build.js",
     "build:css:prod": "NODE_ENV=prod node ./script/css/build.js",
+    "build:html:dev": "node ./script/html/build.js",
+    "build:html:prod": "NODE_ENV=prod node ./script/html/build.js",
     "build:images:dev": "node ./script/images/build.js",
     "build:images:prod": "NODE_ENV=prod node ./script/images/build.js"
   },
