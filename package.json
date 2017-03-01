@@ -60,6 +60,8 @@
     "build:images:prod": "NODE_ENV=prod node ./script/images/build.js",
     "build:js:dev": "webpack",
     "build:js:prod": "NODE_ENV=prod webpack",
+    "build:dev": "npm run build:images:dev && npm run build:css:dev && npm run build:js:dev && npm run build:html:dev",
+    "build:prod": "npm run build:images:prod && npm run build:css:prod && npm run build:js:prod && npm run build:html:prod",
     "watch:css": "onchange './src/scss/**/*.scss' -- npm run build:css:dev",
     "watch:html": "onchange './src/twig/template/**/*.twig' -- npm run build:html:dev",
     "watch:js": "webpack --watch",
