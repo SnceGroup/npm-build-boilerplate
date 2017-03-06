@@ -3,17 +3,24 @@
   "bugs": "https://github.com/SnceGroup/npm-build-boilerplate/issues",
   "description": "Opinionated npm build configuration for building static websites.",
   "devDependencies": {
-    "autoprefixer": "^6.7.4",
-    "clean-css-cli": "^4.0.7",
+    "autoprefixer": "^6.7.6",
+    "browser-sync": "^2.18.8",
+    "clean-css-cli": "^4.0.8",
+    "glob": "^7.1.1",
     "imagemin-cli": "^3.0.0",
     "imagemin-pngquant": "^5.0.0",
     "node-sass": "^4.5.0",
+    "onchange": "^3.2.1",
+    "parallelshell": "^2.0.0",
     "postcss-cli": "^3.0.0-beta",
+    "rimraf": "^2.6.1",
     "stylefmt": "^5.1.2",
     "stylelint": "^7.9.0",
     "stylelint-config-standard": "^16.0.0",
     "svg-sprite": "^1.3.6",
-    "symlink-or-copy": "^1.1.8"
+    "symlink-or-copy": "^1.1.8",
+    "twig": "^1.10.4",
+    "webpack": "^2.2.1"
   },
   "engines": {
     "node": ">=4.0.0"
@@ -39,13 +46,30 @@
   },
   "scripts": {
     "autoprefixer": "node ./script/css/autoprefixer.js",
+    "browser-sync": "node ./script/server/browser-sync.js",
     "clean-css": "node ./script/css/clean-css.js",
     "imagemin": "node ./script/images/imagemin.js",
+    "rimraf:dev": "node ./script/clean/rimraf.js",
+    "rimraf:prod": "NODE_ENV=prod node ./script/clean/rimraf.js",
     "scss": "node ./script/css/scss.js",
     "svg-sprite": "node ./script/images/svg-sprite.js",
     "stylelint": "node ./script/css/stylelint.js",
+    "twig": "node ./script/html/twig.js",
     "build:css:dev": "node ./script/css/build.js",
-    "build:css:prod": "NODE_ENV=prod node ./script/css/build.js"
+    "build:css:prod": "NODE_ENV=prod node ./script/css/build.js",
+    "build:html:dev": "node ./script/html/build.js",
+    "build:html:prod": "NODE_ENV=prod node ./script/html/build.js",
+    "build:images:dev": "node ./script/images/build.js",
+    "build:images:prod": "NODE_ENV=prod node ./script/images/build.js",
+    "build:js:dev": "webpack",
+    "build:js:prod": "NODE_ENV=prod webpack",
+    "build:dev": "npm run rimraf:dev && npm run build:images:dev && npm run build:css:dev && npm run build:js:dev && npm run build:html:dev",
+    "build:prod": "npm run rimraf:prod && npm run build:images:prod && npm run build:css:prod && npm run build:js:prod && npm run build:html:prod",
+    "watch:css": "onchange './src/scss/**/*.scss' -- npm run build:css:dev",
+    "watch:html": "onchange './src/twig/template/**/*.twig' -- npm run build:html:dev",
+    "watch:js": "webpack --watch",
+    "watch": "parallelshell 'npm run browser-sync' 'npm run watch:css' 'npm run watch:html'"
   },
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "dependencies": {}
 }
