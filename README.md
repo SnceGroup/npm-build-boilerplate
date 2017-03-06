@@ -17,7 +17,7 @@ Available commands to execute with `npm run <command>`.
 ### Build
 
 | Command | Tasks | Notes |
-| - | - | - |
+| --- | --- | --- |
 | build:css:dev | stylefmt, stylelint, scss, autoprefixer | CSS not minified. Source comments available. |
 | build:css:prod | stylefmt, stylelint, scss, autoprefixer, clean-css | CSS minified. |
 | build:html:dev | twig | |
@@ -32,6 +32,6 @@ Available commands to execute with `npm run <command>`.
 ### Watch
 
 | Command | Tasks | Notes |
-| - | - | - |
+| --- | --- | --- |
 | watch:js | webpack | Run webpack in watch mode. |
 | watch | browser-sync, build:css:dev, build:html:dev | Run Browsersync on port 3000. Watch for scss and twig files changes and run relative build dev tasks. |
