@@ -6,6 +6,7 @@
     "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
     "clean-css-cli": "^4.3.0",
+    "concurrently": "^4.1.1",
     "glob": "^7.1.4",
     "imagemin-cli": "^5.0.0",
     "imagemin-pngquant": "^8.0.0",
@@ -20,11 +21,10 @@
     "symlink-or-copy": "^1.2.0",
     "twig": "^1.13.3",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5",
-    "concurrently": "^4.1.1"
+    "webpack-cli": "^3.3.5"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=10.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -69,8 +69,7 @@
     "watch:css": "onchange './src/scss/**/*.scss' -- npm run build:css:dev",
     "watch:html": "onchange './src/twig/**/**/*.html.twig' -- npm run build:html:dev",
     "watch:js": "NODE_ENV=dev webpack --watch",
-    "watch:svg": "onchange './src/sprite/svg/**/*.svg' -- npm run svg-sprite",
-    "watch": "concurrently 'npm run browser-sync' 'npm run watch:css' 'npm run watch:html' 'npm run watch:js' 'npm run watch:svg'"
+    "watch": "concurrently 'npm run browser-sync' 'npm run watch:css' 'npm run watch:html'"
   },
   "version": "1.0.1"
 }
