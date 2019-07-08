@@ -3,7 +3,7 @@ Opinionated npm build configuration for building static websites.
 
 ## Requirements
 
- - [Node.js](https://nodejs.org) (tested with v8.9.0)
+ - [Node.js](https://nodejs.org) (tested with v10.15.3)
 
 ## Installation
 
@@ -33,4 +33,4 @@ Available commands to execute with `npm run <command>`.
 | Command | Tasks | Notes |
 | --- | --- | --- |
 | watch:js | webpack | Run webpack in watch mode. |
-| watch | browser-sync, build:css:dev, build:html:dev | Run Browsersync on port 3000. Watch for scss and twig files changes and run relative build dev tasks. |
+| watch | browser-sync, watch:css, watch:html, watch:js, watch:svg | Run Browsersync on port 3000. Watch for scss and twig files changes and run relative build dev tasks. |
