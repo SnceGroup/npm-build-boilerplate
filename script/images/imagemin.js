@@ -1,18 +1,11 @@
-var execCommand = require('../helper/exec-command');
-var helper = require('../helper');
-var symlinkOrCopySync = require('symlink-or-copy').sync;
-var buildFolder = helper.getBuildRootFolder();
-var isProduction = helper.isProductionBuild();
+const execCommand = require('../helper/exec-command');
+const helper = require('../helper');
+const buildFolder = helper.getBuildRootFolder();
 
 /**
- * Prod: minify and copy images
- * Dev: symlink images folder, or copy images if symlink is not available
+ * Minify and copy images. Minify svgs.
  */
-if(isProduction) {
-  var command = 'imagemin ./src/images/* --out-dir='+ buildFolder +'/images -p=pngquant -p=jpegtran -p=gifsicle -p=svgo';
-  execCommand(command);
-}
-else {
-  helper.createBuildRootFolderIfNotAvailable();
-  symlinkOrCopySync('src/images', buildFolder + '/images');
-}
+const commandImage = `imagemin ./src/images/* --out-dir=${buildFolder}/images -p=optipng -p=jpegtran`;
+const commandSvg = `svgo -f ./src/svg --enable=removeXMLNS`;
+execCommand(commandImage);
+execCommand(commandSvg);
