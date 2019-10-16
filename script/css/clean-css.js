@@ -1,5 +1,5 @@
-var buildFolder = require('../helper').getBuildRootFolder();
-var execCommand = require('../helper/exec-command');
+const buildFolder = require('../helper').getBuildRootFolder();
+const execCommand = require('../helper/exec-command');
 
-var command = 'cleancss -o '+ buildFolder +'/css/* '+ buildFolder +'/css/*';
+const command = `cleancss -o ${buildFolder}/css/* ${buildFolder}/css/*`;
 execCommand(command);
