@@ -1,0 +1,9 @@
+/* 1 - Settings  */
+@import './1-settings/s-colors.css';
+
+/* 4 - Elements */
+@import './4-elements/e-elements.css';
+
+/* 6 - Components */
+@import './6-components/c-icon.css';
+@import './6-components/c-task.css';

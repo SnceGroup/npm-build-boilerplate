@@ -1,0 +1,16 @@
+.c-task {
+  border-bottom: 1px dotted var(--green);
+  padding: 20px 30px;
+}
+
+.c-task__green {
+  color: var(--green);
+}
+
+.c-task__image {
+  --image-url: url('../images/sample-1.jpg');
+  width: 100px;
+  height: 100px;
+  background: var(--image-url) no-repeat 0 0;
+  background-size: 100px auto;
+}
