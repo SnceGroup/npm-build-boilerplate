@@ -1,10 +1,12 @@
-var isProduction = require('../helper').isProductionBuild();
-var execCommand = require('../helper/exec-command');
+const helper = require('../helper');
+const buildFolder = helper.getBuildRootFolder();
+const isProduction = helper.isProductionBuild();
+const execCommand = require('../helper/exec-command');
 
-var command = 'npm run stylelint && npm run scss && npm run autoprefixer';
+let command = `postcss 'src/css/*.css' --dir '${buildFolder}/css'`;
 
 if(isProduction) {
-  command = command + ' && npm run clean-css';
+  command = `${command} && npm run clean-css`;
 }
 
 execCommand(command);
