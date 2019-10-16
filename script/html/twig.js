@@ -29,7 +29,7 @@ glob(templatePath, (err, files) => {
         if (err) {
           throw err;
         }
-        console.log('Html template saved: ' + filename);
+        console.log(`Html template saved: ${filename}`);
       });
     });
   });
