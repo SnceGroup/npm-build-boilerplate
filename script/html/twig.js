@@ -23,7 +23,7 @@ glob(templatePath, (err, files) => {
         throw err;
       }
 
-      const filename = file.split('/').pop().replace('.twig', '');
+      const filename = file.split('/').pop().replace('.twig', '.html');
       const filepath = path.join(buildFolder, filename);
       fs.writeFile(filepath, html, err => {
         if (err) {
