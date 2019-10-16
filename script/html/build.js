@@ -1,4 +1,4 @@
-var execCommand = require('../helper/exec-command');
+const execCommand = require('../helper/exec-command');
 
-var command = 'npm run twig';
+const command = 'npm run twig';
 execCommand(command);

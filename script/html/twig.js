@@ -12,12 +12,12 @@ const data = require(dataPath);
 
 helper.createBuildRootFolderIfNotAvailable();
 
-glob(templatePath, function (err, files) {
+glob(templatePath, (err, files) => {
   if (err) {
       throw err;
   }
 
-  files.forEach(function(file) {
+  files.forEach(file => {
     Twig.renderFile(file, data, (err, html) => {
       if (err) {
         throw err;
@@ -25,7 +25,7 @@ glob(templatePath, function (err, files) {
 
       const filename = file.split('/').pop().replace('.twig', '');
       const filepath = path.join(buildFolder, filename);
-      fs.writeFile(filepath, html, (err) => {
+      fs.writeFile(filepath, html, err => {
         if (err) {
           throw err;
         }
