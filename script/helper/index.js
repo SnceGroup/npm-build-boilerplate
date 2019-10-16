@@ -1,37 +1,23 @@
-var config = require('../../config.json');
-var fs = require('fs');
+const config = require('../../config.json');
+const fs = require('fs');
 
 /**
  * Returns true if the build is running in production mode
- *
- * @returns {Boolean} True if production mode is enabled
+ * @returns {Boolean} true if production mode is enabled
  */
-var isProductionBuild = function() {
-  if(process.env.NODE_ENV && process.env.NODE_ENV === 'prod') {
-    return true;
-  }
-  
-  return false;
-};
+const isProductionBuild = () => process.env.NODE_ENV && process.env.NODE_ENV === 'prod';
 
 /**
  * Get the root build folder by checking the NODE_ENV variable
- *
  * @returns {String} The root folder for the build
  */
-var getBuildRootFolder = function() {
-  if(isProductionBuild()) {
-    return config.build.prodDir;
-  }
-  
-  return config.build.devDir;
-};
+const getBuildRootFolder = () => isProductionBuild() ? config.build.prodDir : config.build.devDir;
 
 /**
  * Create the build folder if it doesn't exist
  */
-var createBuildRootFolderIfNotAvailable = function() {
-  var buildFolder = getBuildRootFolder();
+const createBuildRootFolderIfNotAvailable = () => {
+  const buildFolder = getBuildRootFolder();
 
   if (!fs.existsSync(buildFolder)) {
     fs.mkdirSync(buildFolder);
@@ -39,7 +25,7 @@ var createBuildRootFolderIfNotAvailable = function() {
 };
 
 module.exports = {
-  isProductionBuild: isProductionBuild,
-  getBuildRootFolder: getBuildRootFolder,
-  createBuildRootFolderIfNotAvailable: createBuildRootFolderIfNotAvailable
+  isProductionBuild,
+  getBuildRootFolder,
+  createBuildRootFolderIfNotAvailable
 }
