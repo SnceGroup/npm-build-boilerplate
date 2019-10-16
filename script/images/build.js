@@ -1,4 +1,4 @@
-var execCommand = require('../helper/exec-command');
+const execCommand = require('../helper/exec-command');
 
-var command = 'npm run imagemin && npm run svg-sprite';
+const command = 'npm run imagemin';
 execCommand(command);
