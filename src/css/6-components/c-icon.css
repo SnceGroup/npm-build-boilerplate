@@ -1,0 +1,14 @@
+.c-icon {
+  background-size: 100% auto;
+}
+
+.c-icon--sample-1 {
+  display: block;
+  width: 100px;
+  height: 100px;
+  transition: all 0.5s;
+}
+
+.c-icon--sample-1:hover {
+  transform: rotate(90deg);
+}
