@@ -3,41 +3,29 @@
   "bugs": "https://github.com/SnceGroup/npm-build-boilerplate/issues",
   "description": "Opinionated npm build configuration for building static websites.",
   "devDependencies": {
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "^9.6.5",
     "browser-sync": "^2.26.7",
     "clean-css-cli": "^4.3.0",
-    "concurrently": "^4.1.1",
+    "concurrently": "^5.0.0",
     "glob": "^7.1.4",
     "imagemin-cli": "^5.0.0",
-    "imagemin-pngquant": "^8.0.0",
-    "node-sass": "^4.12.0",
-    "onchange": "^6.0.0",
-    "postcss-cli": "^6.1.2",
-    "rimraf": "^2.6.3",
-    "stylefmt": "^6.0.3",
-    "stylelint": "^10.1.0",
-    "stylelint-config-standard": "^18.3.0",
-    "svg-sprite": "1.3.6",
-    "symlink-or-copy": "^1.2.0",
+    "onchange": "^6.1.0",
+    "postcss-cli": "^6.1.3",
+    "postcss-import": "^12.0.1",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
     "twig": "^1.13.3",
-    "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5"
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
   },
   "engines": {
     "node": ">=10.0.0"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/js/*.js"
-    ]
   },
   "keywords": [
     "npm",
     "build",
     "static",
-    "website",
-    "sass",
-    "twig"
+    "website"
   ],
   "license": "MIT",
   "name": "npm-build-boilerplate",
@@ -46,15 +34,13 @@
     "url": "https://github.com/SnceGroup/npm-build-boilerplate"
   },
   "scripts": {
-    "autoprefixer": "node ./script/css/autoprefixer.js",
     "browser-sync": "node ./script/server/browser-sync.js",
     "clean-css": "node ./script/css/clean-css.js",
+    "format:css": "prettier --write 'src/css/**/*.css'",
+    "format:js": "prettier --write 'src/js/**/*.js'",
     "imagemin": "node ./script/images/imagemin.js",
     "rimraf:dev": "node ./script/clean/rimraf.js",
     "rimraf:prod": "NODE_ENV=prod node ./script/clean/rimraf.js",
-    "scss": "node ./script/css/scss.js",
-    "svg-sprite": "node ./script/images/svg-sprite.js",
-    "stylelint": "node ./script/css/stylelint.js",
     "twig": "node ./script/html/twig.js",
     "build:css:dev": "node ./script/css/build.js",
     "build:css:prod": "NODE_ENV=prod node ./script/css/build.js",
@@ -62,14 +48,14 @@
     "build:html:prod": "NODE_ENV=prod node ./script/html/build.js",
     "build:images:dev": "node ./script/images/build.js",
     "build:images:prod": "NODE_ENV=prod node ./script/images/build.js",
-    "build:js:dev": "webpack",
-    "build:js:prod": "NODE_ENV=prod webpack",
+    "build:js:dev": "webpack --mode=development",
+    "build:js:prod": "NODE_ENV=prod webpack --mode=production && npm run format:js",
     "build:dev": "npm run rimraf:dev && npm run build:images:dev && npm run build:css:dev && npm run build:js:dev && npm run build:html:dev",
     "build:prod": "npm run rimraf:prod && npm run build:images:prod && npm run build:css:prod && npm run build:js:prod && npm run build:html:prod",
-    "watch:css": "onchange './src/scss/**/*.scss' -- npm run build:css:dev",
-    "watch:html": "onchange './src/twig/**/**/*.html.twig' -- npm run build:html:dev",
-    "watch:js": "NODE_ENV=dev webpack --watch",
+    "watch:css": "onchange './src/css/**/*.css' -- npm run build:css:dev",
+    "watch:html": "onchange './src/twig/**/**/*.twig' -- npm run build:html:dev",
+    "watch:js": "webpack --mode=development --watch",
     "watch": "concurrently 'npm run browser-sync' 'npm run watch:css' 'npm run watch:html'"
   },
-  "version": "1.0.1"
+  "version": "2.0.0"
 }
