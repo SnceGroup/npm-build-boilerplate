@@ -57,5 +57,5 @@
     "watch:js": "webpack --mode=development --watch",
     "watch": "concurrently 'npm run browser-sync' 'npm run watch:css' 'npm run watch:html'"
   },
-  "version": "2.0.2"
+  "version": "2.0.3"
 }
