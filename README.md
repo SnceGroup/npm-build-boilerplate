@@ -3,11 +3,12 @@ Opinionated npm build configuration for building static websites.
 
 ## Requirements
 
- - [Node.js](https://nodejs.org) (tested with v8.9.0)
+ - [Node.js](https://nodejs.org) (tested with v16.13.2)
 
 ## Installation
 
  - Download the project zip or clone the repository.
+ - run `nvm use` in order to set correct node version
  - Install dependencies: `npm install`.
 
 ## Commands
