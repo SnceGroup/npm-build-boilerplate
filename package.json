@@ -1,6 +1,6 @@
 {
-  "author": "Stefano Nava <stefano.nava@sncegroup.ch>",
-  "bugs": "https://github.com/stefanonava77/npm-build-boilerplate/issues",
+  "author": "Alberto Terragni <alberto.terragni@sncegroup.ch>, Stefano Nava <stefano.nava@sncegroup.ch>",
+  "bugs": "https://github.com/SnceGroup/npm-build-boilerplate/issues",
   "description": "Npm build configuration for building static websites.",
   "devDependencies": {
     "autoprefixer": "^10.4.1",
