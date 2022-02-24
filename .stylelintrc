@@ -1,4 +1,10 @@
 {
   "defaultSeverity": "warning",
-  "extends": "stylelint-config-standard"
+  "extends": "stylelint-config-standard",
+  "customSyntax": "postcss-scss",
+  "rules": {
+    "alpha-value-notation": [
+      "percentage"
+    ]
+  }
 }
